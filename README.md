@@ -1,4 +1,4 @@
-![logo](relative%20path/to/25.png?raw=true 'S.A.M.S')
+![logo](relative/path/in/repository/to/25.png)
 ## What does S.A.M.S stand for?
 S.A.M.S stands for Student Attendance Management System.
 ## What is S.A.M.S used for?
