@@ -15,6 +15,7 @@ import chimoney from '../images/chimoney.png'
 import googlepay from '../images/googlepay.svg'
 import Navbar from "../component/Navbar";
 import Footer from '../component/Footer'
+
 import { CalendarIcon, CheckCircleIcon, InfoIcon, NotAllowedIcon, PhoneIcon, StarIcon, TimeIcon, WarningIcon } from "@chakra-ui/icons";
 export default function Price() {
     useEffect(() =>{
@@ -30,7 +31,7 @@ export default function Price() {
     <div>
        
         <Navbar />
-        <Flex flexDir={'row'} align={'center'} justifyContent={'center'} mt={'70px'}>
+        <Flex flexDir={'row'} align={'center'} justifyContent={'center'} mt={'100px'}>
             <Heading fontFamily={'mono'} px={'10px'}>Pricing Plan</Heading>
             <Box w={'50px'}>
                 <img src={tag} alt="price-tag" />
