@@ -11,7 +11,9 @@ import underline5 from '../images/underline5.svg'
 import arrow4 from '../images/arrow4.svg'
 import punct from '../images/punctuation1.svg'
 import doodle from '../images/doodle2.svg'
+import arrow5 from '../images/arrow5.svg'
 import cornerarrow from '../images/cornerarrow.svg'
+import grading from '../images/grading.png'
 import doodle4 from '../images/doodle4.svg'
 import { motion } from "framer-motion";
 import { useEffect} from "react"
@@ -52,7 +54,7 @@ export const Home = () =>{
   const fadeIn ={
       initial:{
         opacity:0,
-        y:100
+        y:'300'
       },
       animate:{
         opacity:1,
@@ -72,7 +74,7 @@ export const Home = () =>{
    const SlideIn ={
       initial:{
         opacity:0,
-        x:100
+        x: 300,
       },
       animate:{
         opacity:1,
@@ -81,14 +83,15 @@ export const Home = () =>{
       
   }
 
-  return <div>
+  return(
+   <div>
           <Navbar/>
           <SimpleGrid columns={{base:'1',lg:'2', xl:'2' }} overflowX={'hidden'} my={'40px'}>
             <Container as={motion.div}
                 variants={fadeIn}
                 initial={'initial'}
                 whileInView={'animate'}
-                transition={{delay:0.4}}
+                transition={{delay:0.5, ease:"ease-in", type:'spring', stiffness: 120, duration: 1 }}
                 viewport={{
                   once:true
                 }}
@@ -115,7 +118,7 @@ export const Home = () =>{
                 variants={SlideIn}
                 initial={'initial'}
                 whileInView={'animate'}
-                transition={{delay:0.8}}
+                transition={{delay:0.8, ease:"ease-in", duration:1}}
                 viewport={{
                   once:true
                 }}
@@ -128,11 +131,11 @@ export const Home = () =>{
                   variants={fadeIn}
                   initial={'initial'}
                   whileInView={'animate'}
-                  transition={{delay: 1}}
+                  transition={{delay: 1, ease:"ease-in", type:'tween', duration:1}}
                   viewport={{
                     once:true
                   }} 
-              w={'80px'} pos={'absolute'} top={{lg:'2%',xl:'2.8%'}} left={{lg:'44%', xl:'38%'}}>
+              w={'80px'} pos={'absolute'} top={{lg:'2%',xl:'2.8%'}} left={{lg:'46%', xl:'41%'}}>
              <img src={doodle4} alt="doodle" style={{filter:'invert(34%) sepia(71%) saturate(3040%) hue-rotate(328deg) brightness(101%) contrast(89%)'}} />
            </Box>
            </Show>
@@ -148,27 +151,27 @@ export const Home = () =>{
                   variants={fadeIn}
                   initial={'initial'}
                   whileInView={'animate'}
-                  transition={{delay:0.7}}
+                  transition={{delay:0.8, ease:"ease-in"}}
                   viewport={{
                     once:true
                   }}
-                fontSize={'34px'} pos={'relative'} >Transforming Education, One Attendance at a Time</Heading>
+                fontSize={{base:'32px', md:'34px', lg:'34px', xl:"34px"}} pos={'relative'} textAlign={{base:'center', md:'left', xl:'left'}} >Transforming Education, One Attendance at a Time</Heading>
               <Box as={motion.div}
                   variants={fadeIn}
                   initial={'initial'}
                   whileInView={'animate'}
-                  transition={{delay: 1.1}}
+                  transition={{delay: 0.9, ease:"ease-in"}}
                   viewport={{
                     once:true
                   }} 
-                  w={{base:'250px',md:'200px',lg:'200px',xl:'200px'}} pos={'absolute'} left={{base:'33%',md:'37%',lg:'40%',xl:'45%'}}>
+                  w={{base:'250px',md:'200px',lg:'200px',xl:'200px'}} pos={'absolute'} left={{base:'20%',md:'37%',lg:'40%',xl:'45%'}}>
                     <img src={underline5} alt="loop" style={{filter:'invert(34%) sepia(71%) saturate(3040%) hue-rotate(328deg) brightness(101%) contrast(89%)'}}/>
                  </Box>
               <Text as={motion.div}
                   variants={fadeIn}
                   initial={'initial'}
                   whileInView={'animate'}
-                  transition={{delay:0.8}}
+                  transition={{delay:0.8, ease:"ease-in"}}
                   viewport={{
                     once:true
                   }} 
@@ -179,7 +182,7 @@ export const Home = () =>{
                     variants={fadeIn}
                     initial={'initial'}
                     whileInView={'animate'}
-                    transition={{delay:0.9}}
+                    transition={{delay:0.9, ease:"ease-in"}}
                     viewport={{
                       once:true
                     }} 
@@ -203,7 +206,7 @@ export const Home = () =>{
                   variants={SlideIn}
                   initial={'initial'}
                   whileInView={'animate'}
-                  transition={{delay:0.5}}
+                  transition={{delay:0.5, ease:"ease-in"}}
                   viewport={{
                     once:true
                   }}
@@ -214,7 +217,7 @@ export const Home = () =>{
                   variants={fadeIn}
                   initial={'initial'}
                   whileInView={'animate'}
-                  transition={{delay:0.8}}
+                  transition={{delay:0.8, ease:"ease-in"}}
                   viewport={{
                     once:true
                   }}
@@ -235,7 +238,7 @@ export const Home = () =>{
                     variants={fadeIn}
                     initial={'initial'}
                     whileInView={'animate'}
-                    transition={{delay:1.1}}
+                    transition={{delay:1, ease:"ease-in"}}
                     viewport={{
                       once:true
                     }}
@@ -251,7 +254,7 @@ export const Home = () =>{
                     variants={SlideIn}
                     initial={'initial'}
                     whileInView={'animate'}
-                    transition={{delay:1.4}}
+                    transition={{delay:1, ease:"ease-in"}}
                     viewport={{
                       once:true
                     }}
@@ -267,7 +270,7 @@ export const Home = () =>{
                     variants={SlideIn}
                     initial={'initial'}
                     whileInView={'animate'}
-                    transition={{delay:1.7}}
+                    transition={{delay:1, ease:"ease-in"}}
                     viewport={{
                       once:true
                     }} w={{base:'300px', md:'300px', lg:'500px', xl:'500px'}} pb={'30px'} mr={'50px'}>
@@ -277,7 +280,7 @@ export const Home = () =>{
                     variants={fadeIn}
                     initial={'initial'}
                     whileInView={'animate'}
-                    transition={{delay:2}}
+                    transition={{delay:1, ease:"ease-in"}}
                     viewport={{
                       once:true
                     }} mt={{base:'0px', md:'0px', lg:'70px', xl:'0px'}} pb={'30px'} textAlign={{base:'center',  lg:'left', xl:'left'}}> 
@@ -289,13 +292,12 @@ export const Home = () =>{
                 </Flex>
 
                 
-                
-                <Flex align={'center'} flexDir={{base:'column', md:'column', lg:'row', xl:'row'}} mb={'50px'} ml={'auto'} mr={'auto'}>
-                    <Container as={motion.div}
+                <Flex align={'center'} flexDir={{base:'column', md:'column', lg:'row', xl:'row'}} ml={'auto'} mr={'auto'}>
+                <Container as={motion.div}
                   variants={fadeIn}
                   initial={'initial'}
                   whileInView={'animate'}
-                  transition={{delay:2.3}}
+                  transition={{delay:1, ease:"ease-in"}}
                   viewport={{
                     once:true
                   }} mt={{base:'0px', md:'0px', lg:'100px', xl:'0px'}} mr={'40px'} pb={'30px'} textAlign={{base:'center',  lg:'left', xl:'left'}} >
@@ -305,80 +307,86 @@ export const Home = () =>{
                       and make data-driven <br /> decisions to enhance student engagement <br /> and 
                       classroom dynamics.
                     </Text>
-                  </Container>                
+                  </Container>                 
                   <Box 
                   as={motion.div}
                   variants={SlideIn}
                   initial={'initial'}
                   whileInView={'animate'}
-                  transition={{delay:2.6}}
+                  transition={{delay:1, ease:"ease-in"}}
                   viewport={{
                     once:true
                   }} w={{base:'300px', md:'300px', lg:'400px', xl:'400px'}} pb={'30px'}>
                     <img src={data_analysis} alt="real-time" />
                   </Box>
                   
+                  
               </Flex>
-                
-  
-                
-                
-                
-            <Flex align={'center'} flexDir={{base:'column', md:'column', lg:'row', xl:'row'}} mb={'50px'} >
-              <Box as={motion.div}
-                  variants={SlideIn}
-                  initial={'initial'}
-                  whileInView={'animate'}
-                  transition={{delay:2.9}}
-                  viewport={{
-                    once:true
-                  }} 
-                  w={{base:'400px', md:'400px', lg:'700px', xl:'700px'}} pb={'0px'} ml={'20%'} pr={'30px'} mr={'40px'}>
-                    <img src={confirm} alt="real-time" />
+
+      
+                <Flex align={'center'} flexDir={{base:'column', md:'column', lg:'row', xl:'row'}} mb={'50px'} ml={'auto'} mr={'auto'}>
+                                   
+                  <Box 
+                      as={motion.div}
+                      variants={SlideIn}
+                      initial={'initial'}
+                      whileInView={'animate'}
+                      transition={{delay:1, ease:"ease-in"}}
+                      viewport={{
+                        once:true
+                      }} w={{base:'400px', md:'500px', lg:'600px', xl:'600px'}} pb={'30px'} mr={'30px'} ml={{base:'0px', xl:'150px'}}>
+                        <img src={grading} alt="real-time" />
                   </Box>
                   <Container as={motion.div}
-                    variants={fadeIn}
-                    initial={'initial'}
-                    whileInView={'animate'}
-                    transition={{delay:3.2}}
-                    viewport={{
-                      once:true
-                    }}
-                     mt={{base:'0px', md:'0px', lg:'70px', xl:'0px'}} textAlign={{base:'center',  lg:'left', xl:'left'}} pb={'30px'}>
-                      <Heading fontFamily={'solo'}  pb={'10px'}>Enhanced Accountality</Heading>
-                      <Text fontSize={{base:'13px', md:'16px', lg:'16px',xl:'16px'}}>
-                        Ensure students are physically present <br/> in the classroom, improving <br/>accounatbility and 
-                        creating a more <br/> focused learning environment.
-                      </Text>
-                  </Container>
-                  
-                  
-                </Flex>
-                
-              
-            </SimpleGrid>
-            <Flex justify={'center'}  pb={{base:'0px',lg:'40px',xl:'40px'}}>
-              <NavLink to={'/about'}>
-              <Box as={motion.div}
-                  variants={fadeInto}
+                  variants={fadeIn}
                   initial={'initial'}
                   whileInView={'animate'}
-                  transition={{delay:4.5}}
+                  transition={{delay:0.8, ease:"ease-in"}}
                   viewport={{
                     once:true
-                  }} w={'30px'} pos={'absolute'} left={{base:'20%', md:'30%', lg:'35%', xl:'38%'}}>
-                  <img src={doodle} alt="doodle" style={{filter:'invert(34%) sepia(71%) saturate(3040%) hue-rotate(328deg) brightness(101%) contrast(89%)'}}/>
-                </Box>
+                  }}
+                 mt={{base:'0px', md:'0px', lg:'60px', xl:'0px'}} pb={'30px'} textAlign={{base:'center',  lg:'left', xl:'left'}}>
+                  <Heading fontFamily={'solo'} pb={'10px'}>Automatic Grading</Heading>
+                  <Text fontSize={{base:'13px',md:'16px', lg:'16px',xl:'16px'}}>
+                    Never worry about attendance again. <br /> Lecturers can easily manage
+                    and students can <br /> quickly submit their attendance with a few clicks.
+                  </Text>
+                </Container> 
+                  
+              </Flex>
+                
+            </SimpleGrid>
+            <Flex justify={'center'}  pb={{base:'0px', md:'30px',lg:'40px',xl:'40px'}}>
+              <NavLink to={'/about'}>
+                <Show above="lg">
+                    <Box as={motion.div}
+                      variants={fadeInto}
+                      initial={'initial'}
+                      whileInView={'animate'}
+                      transition={{delay:1, ease:"ease-in"}}
+                      viewport={{
+                        once:true
+                      }} w={'30px'} pos={'absolute'} left={{base:'20%', md:'30%', lg:'35%', xl:'38%'}}>
+                      <img src={doodle} alt="doodle" style={{filter:'invert(34%) sepia(71%) saturate(3040%) hue-rotate(328deg) brightness(101%) contrast(89%)'}}/>
+                    </Box>
+                </Show>
+              
                 <Button as={motion.div}
                   variants={fadeInto}
                   initial={'initial'}
                   whileInView={'animate'}
-                  transition={{delay:4}}
+                  transition={{delay:1, ease:"ease-in"}}
                   viewport={{
                     once:true
                   }} 
                   sx={firstRegister} pos={'relative'} px={'60px'} my={'30px'}>
                   LEARN MORE
+                  <Show below="lg">
+                    <Box w={'30px'} ml={'20px'}>
+                        <img src={arrow5} style={{filter:'invert(34%) sepia(71%) saturate(3040%) hue-rotate(328deg) brightness(101%) contrast(89%)'}} alt="arrow"/>
+                    </Box>
+                    
+                  </Show>
                 </Button>
                 
                 
@@ -392,7 +400,7 @@ export const Home = () =>{
                     variants={fadeIn}
                     initial={'initial'}
                     whileInView={'animate'}
-                    transition={{delay:1}}
+                    transition={{delay:1, ease:"ease-in"}}
                     viewport={{
                       once:true
                     }} 
@@ -414,7 +422,7 @@ export const Home = () =>{
                       variants={SlideIn}
                       initial={'initial'}
                       whileInView={'animate'}
-                      transition={{delay: 1.5}}
+                      transition={{delay: 1, ease:"ease-in"}}
                       viewport={{
                         once:true
                       }} 
@@ -428,4 +436,5 @@ export const Home = () =>{
             
     <Outlet />
   </div>
+  )
 }

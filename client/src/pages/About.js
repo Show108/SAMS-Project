@@ -30,8 +30,6 @@ export default function Price() {
         <Box width={{ md:'700px', lg: '900px'}} ml={{md:'70px',lg:'400px'}} my={{ base:'0px', lg:'-70px'}} >
             <img src={image} alt="image" />
         </Box>
-
-        <Outlet />
         
     </div>
   )
