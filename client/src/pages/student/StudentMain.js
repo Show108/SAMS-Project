@@ -1,38 +1,31 @@
-import { Box, Button, Container, HStack, Heading, Image, Text } from "@chakra-ui/react";
-import image from '../images/25.png'
+import { Box, Button, Container, Flex, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import nodata from '../../images/no-data.png'
 import { color } from "framer-motion";
 export default function StudentMain() {
     useEffect(() =>{
         document.body.classList.add('bg-color')
     }, [])
-
-    const buttonReturn={
-        bgColor: '#213655',
-        color: 'white',
-        ':hover':{
-            color: 'black',
-            bgColor:'blue.100'
-        }
-    }
   return (
     <div>
-        <Container py={'60px'}>
-            <Heading>Page in development</Heading>
-            <HStack py={'20px'}>
-                <Text px={'10px'} fontWeight={'semibold'}>Check back</Text>
-                <Button sx={buttonReturn}>
-                    <NavLink to='/'>Return home</NavLink>
-                </Button>
-            </HStack>
+        <Container mt={'20px'}>
+            <Flex justify={'center'}>
+                <Box w={'500px'}>
+                    <img src={nodata} alt="no-data"/>
+                </Box>
+            </Flex>
+            <Text textAlign={'center'} fontWeight={'semibold'} mt={'-80px'}>You are yet to create an attendance tab</Text>
+            <Flex justify={'center'} mt={'20px'} gap={'5'}>
+                <Button colorScheme="red">Create</Button>
+                <Button colorScheme="white" color={'red'}>Join</Button>
+            </Flex>
         </Container>
-        <Box width={{ md:'700px', lg: '900px'}} ml={{md:'70px',lg:'400px'}} my={{ base:'0px', lg:'-70px'}} >
-            <img src={image} alt="image" />
-        </Box>
-
-        
+       
         
     </div>
   )
 }
+
+
+
+  

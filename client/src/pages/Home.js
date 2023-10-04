@@ -1,4 +1,14 @@
 import { Box, Button, Flex, Heading, Container, SimpleGrid, Text, HStack, Grid, GridItem, Show, Hide } from "@chakra-ui/react"
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from '@chakra-ui/react'
+import { useDisclosure } from '@chakra-ui/react'
 import topImage from '../images/image_1.png'
 import easy_attendance from '../images/easy_attendance.png'
 import real_time from '../images/real_time.png'
@@ -13,6 +23,7 @@ import punct from '../images/punctuation1.svg'
 import doodle from '../images/doodle2.svg'
 import arrow5 from '../images/arrow5.svg'
 import cornerarrow from '../images/cornerarrow.svg'
+import cookies from '../images/cookies.png'
 import grading from '../images/grading.png'
 import doodle4 from '../images/doodle4.svg'
 import { motion } from "framer-motion";
@@ -24,6 +35,7 @@ import '@fontsource/raleway/500.css'
 import '@fontsource/roboto/300.css'
 import Navbar from "../component/Navbar"
 import Footer from "../component/Footer"
+
 export const Home = () =>{
   useEffect(() =>{
     document.body.classList.add('bg-color')
@@ -49,6 +61,17 @@ export const Home = () =>{
         bgColor: '#f2575d',
         color: 'white',
         border: '3px solid #f2575d '
+    }
+  }
+  const cookie ={
+    color: '#213655',
+      border: '1px solid grey ',
+      bgColor: 'transparent',
+      borderRadius: '10px',
+      ':hover':{
+        bgColor: '#f2575d',
+        color: 'white',
+        border: '0px solid #f2575d '
     }
   }
   const fadeIn ={
@@ -82,11 +105,61 @@ export const Home = () =>{
       }
       
   }
-
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  useEffect(()=>{
+    const timer = setTimeout(()=>{
+      onOpen();
+    }, 5000)
+    const cleanup = ()=>{
+      clearTimeout(timer)
+      onClose()
+    }
+  } ,[onOpen,onClose])
+  
   return(
    <div>
-          <Navbar/>
-          <SimpleGrid columns={{base:'1',lg:'2', xl:'2' }} overflowX={'hidden'} my={'40px'}>
+      <Navbar/>
+      {isOpen &&
+      <Drawer
+        isOpen={isOpen}
+        placement='bottom'
+        onClose={onClose}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>
+            <Flex justify={'center'} align={'center'}>
+            <Heading textAlign={'center'} pr={'15px'}>
+            This website uses cookies
+            </Heading>
+            <Box w={'30px'}>
+              <img src={cookies} alt="cookie"/>
+            </Box>
+            </Flex>
+            </DrawerHeader>
+
+          <DrawerBody>
+            <Container>
+                <Text>This website uses cookies and other tracking technologies improve your experience on our website.
+                By using our website, you consent to all cookies in accordance with our Cookie Policy
+                </Text>
+            </Container>
+          </DrawerBody>
+          <Flex flexDirection={'row'} justify={'center'}>
+              <DrawerFooter>
+                  <Button sx={cookie} mr={3} onClick={onClose}>
+                    Read More
+                  </Button>
+                  <Button sx={cookie} mr={3} onClick={onClose}>
+                    Accept
+                  </Button>
+              </DrawerFooter>
+          </Flex>
+        </DrawerContent>
+      </Drawer>
+}
+      <SimpleGrid columns={{base:'1',lg:'2', xl:'2' }} overflowX={'hidden'} my={'40px'}>
             <Container as={motion.div}
                 variants={fadeIn}
                 initial={'initial'}

@@ -43,7 +43,7 @@ export default function Student() {
             </Flex>
             
             <Container mt={'40px'} mr={'auto'} ml={'auto'} >
-                    <Form method="post" action="/student">
+                    <Form method="post" action="/signin/student">
                         <FormControl mb={'30px'} >
                             <InputGroup alignItems={'center'}>
                                 <InputLeftElement pointerEvents={'none'}>
@@ -106,8 +106,7 @@ export default function Student() {
             </Container>
         </Flex>
         </GoogleOAuthProvider>
-      
-        <Outlet/>
+    
         
     </div>
   )

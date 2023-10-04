@@ -43,7 +43,7 @@ export default function Lecturer() {
             </Flex>
             
             <Container mt={'40px'} mr={'auto'} ml={'auto'} >
-                    <Form method="post" action="/lecturer">
+                    <Form method="post" action="/signin/lecturer">
                         <FormControl mb={'30px'} >
                             <InputGroup alignItems={'center'}>
                                 <InputLeftElement pointerEvents={'none'}>
