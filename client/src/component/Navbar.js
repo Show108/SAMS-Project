@@ -17,7 +17,17 @@ export default function Navbar() {
         }
     }
   
-
+    const secondRegister ={
+      color: '#213655',
+      border: '2px solid #213655 ',
+      bgColor: 'transparent',
+      borderRadius: '0',
+      ':hover':{
+        bgColor: '#f2575d',
+        color: 'white',
+        border: '3px solid #f2575d '
+    }
+  }
     const [ display, setDisplay] = useState('none')
     const [ background, setBackground] = useState('hsl(32, 45%, 94%)')
     const [ shadow, setShadow] = useState('')
@@ -44,9 +54,10 @@ export default function Navbar() {
     
     <div>
         <Flex as={motion.div}
-        initial={{opacity:0, y:50}}
-        whileInView={{opacity:1,y:0}}
+        initial={{opacity:0}}
+        whileInView={{opacity:1}}
         ml={'0px'} mt={'0px'} py={'20px'}
+        
          boxShadow={shadow} backgroundColor={background} w={'100%'} pos={'fixed'} zIndex={100} top={'0px'} transition={'all 1s'}>
             
             
@@ -142,8 +153,14 @@ export default function Navbar() {
                           PRICING
                         </Button>
                       </NavLink>
-                      <Button sx={componentButton} w={'20%'}>
-                          Sign in
+                      <Button sx={componentButton} mb={'30px'} w={'20%'}>
+                          Sign Up
+                      </Button>
+                      <Button 
+                      variant={'ghost'}
+                      sx={secondRegister}
+                       w={'20%'}>
+                          Sign In
                       </Button>
                 </Flex>
             </Flex>
